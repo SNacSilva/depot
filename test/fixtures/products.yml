@@ -13,11 +13,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
+  title: MyString 1
   description: MyText
   price: 9.99
 
 two:
-  title: MyString
+  title: MyString 2
   description: MyText
   price: 9.99
+
+tree:
+  title: MyString 4
+  description: MyText
+  price: 9.99
+
+four:
+  title: MyString 3
+  description: MyText
+  price: 9.99
+
+five:
+  title: MyString 5
+  description: MyText
+  price: 9.99
+
+
+
