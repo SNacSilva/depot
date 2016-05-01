@@ -6,9 +6,7 @@
 <% if @cart.line_items.empty?%>
   <p> Carrinho vazio.</p>
 <%else%>
-  <% @cart.line_items.each do |item|%>
-      <li><%= item.quantity %> &times; <%= item.product.title%></li>
-  <%end%>
+  <%= render(@cart.line_items)%>
 <%end%>
 
 
