@@ -1,3 +1,5 @@
+<%= notice %>
+
 <%= hidden_div_if(@cart.line_items.empty?, id: 'cart' ) do%>
   <%= render(@cart)%>
 <%end%>
@@ -19,3 +21,4 @@
 <%end%>
 
 <%= button_to 'Limpar o carrinho', @cart, method: :delete, data: {confirm: 'Tem certeza?'}%>
+<%= button_to 'Finalizar pedido', new_order_path, method: :get %>
