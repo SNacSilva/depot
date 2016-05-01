@@ -1,0 +1,6 @@
+<h2> Carrinho </h2>
+<% if @cart.line_items.empty?%>
+    <p> Carrinho vazio.</p>
+<%else%>
+    <%= render(@cart.line_items)%>
+<%end%>

@@ -2,14 +2,9 @@
 <p> <%= notice %></p>
 <%end%>
 
-<h2> Carrinnho </h2>
-<% if @cart.line_items.empty?%>
-  <p> Carrinho vazio.</p>
-<%else%>
-  <%= render(@cart.line_items)%>
-<%end%>
-
-
+<div id="cart">
+  <%= render(@cart)%>
+</div>
 
 <h1>Catálogo de Produtos</h1>
 
@@ -20,7 +15,7 @@
         <h3><%= product.title%></h3>
         <%=product.description%> -
         <span><%=number_to_currency product.price, unit: 'R$ ' %></span>
-        <%= button_to 'Adicionar ao carrinho', line_items_path(product_id: product)%>
+        <%= button_to 'Adicionar ao carrinho', line_items_path(product_id: product), remote: true%>
       </div>
 
     <%end%>
