@@ -2,6 +2,16 @@
 <p> <%= notice %></p>
 <%end%>
 
+<h2> Carrinnho </h2>
+<% if @cart.line_items.empty?%>
+  <p> Carrinho vazio.</p>
+<%else%>
+  <% @cart.line_items.each do |item|%>
+      <li><%= item.quantity %> &times; <%= item.product.title%></li>
+  <%end%>
+<%end%>
+
+
 
 <h1>Catálogo de Produtos</h1>
 
