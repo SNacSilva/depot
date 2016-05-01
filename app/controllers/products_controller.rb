@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
-
+  rescue_from ActiveRecord::RecordNotFound, with: :product_not_found
   # GET /products
   # GET /products.json
   def index
@@ -64,11 +64,15 @@ class ProductsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
-      @product = Product.find(params[:id])
+      @product = Product.find_by(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
       params.require(:product).permit(:title, :description, :price)
+    end
+
+    def product_not_found
+      redirect_to store_url, notice: 'Produto inválido!'
     end
 end

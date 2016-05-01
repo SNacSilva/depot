@@ -1,5 +1,5 @@
 <% if notice %>
-<%= notice %>
+<p> <%= notice %></p>
 <%end%>
 
 
@@ -18,3 +18,5 @@
     <%end%>
   <%end%>
 <%end%>
+
+<%= button_to 'Limpar o carrinho', @cart, method: :delete, data: {confirm: 'tem certeza?'}%>
