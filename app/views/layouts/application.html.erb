@@ -10,5 +10,17 @@
 
 <%= yield %>
 
+<% if session[:user_id]%>
+  <h2> Opcões do administrador</h2>
+  <ul>
+    <li><%=link_to 'Pedidos', orders_path%></li>
+    <li><%=link_to 'Produtos', products_path%></li>
+    <li><%=link_to 'Usuários', users_path%></li>
+    <li><%=link_to 'Home', store_url%></li>
+  </ul>
+
+  <%= button_to 'Logout', logout_path,method: :delete%>
+<% end %>
+
 </body>
 </html>
