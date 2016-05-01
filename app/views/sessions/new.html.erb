@@ -1,0 +1,14 @@
+Log in
+<%=form_tag do%>
+    <div>
+      <%= label_tag :name, 'Nome do usuário:'%>
+      <%= text_field_tag :name, params[:name]%>
+    </div>
+    <div>
+      <%= label_tag :password, 'Senha: '%>
+      <%= text_field_tag :password, params[:password]%>
+    </div>
+    <div>
+      <%= submit_tag 'Login'%>
+    </div>
+<% end %>
